@@ -1,7 +1,7 @@
 {
   "name": "react-realworld-example-app",
   "version": "0.1.0",
-  "homepage": "https://github.com/gloriaJun/react-realworld-example-app",
+  "homepage": "https://gloriajun.github.io/react-realworld-example-app/",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
