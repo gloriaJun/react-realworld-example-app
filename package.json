@@ -7,6 +7,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:watch": "$npm_execpath test --watch",
     "test:coverage": "$npm_execpath test --coverage --colors",
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.{js,jsx}' --fix",
@@ -29,8 +30,6 @@
     }
   },
   "dependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.13.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8"
@@ -46,9 +45,11 @@
     "eslint-config-prettier": "^4.1.0",
     "gh-pages": "^2.0.1",
     "husky": "^2.1.0",
+    "jest": "^24.8.0",
     "lint-staged": "^8.1.5",
     "prettier": "^1.17.0",
-    "prettier-eslint-cli": "^4.7.1"
+    "prettier-eslint-cli": "^4.7.1",
+    "react-testing-library": "^7.0.1"
   },
   "browserslist": [
     ">0.2%",
