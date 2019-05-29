@@ -1,0 +1,40 @@
+language: node_js
+
+node_js:
+  - latest
+
+cache:
+  directories:
+    - node_modules
+
+branches:
+  only:
+    - master
+
+before_install:
+  - npm update
+
+install:
+  - npm install
+  - npm run build
+
+#after_script: # Upload coverage reports
+#  - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN npm run coveralls
+#  - npm run codecov
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
+  target-branch: gh-pages
+  local-dir: build
+  on:
+    branch: master
+
+notifications:
+  email: false
+  slack:
+    rooms:
+      - glriaroom:$SLACK_TOKEN#devops
+    on_success: change # default : always
+    on_failure: always # default : always
