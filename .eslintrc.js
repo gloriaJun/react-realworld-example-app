@@ -24,13 +24,4 @@ module.exports = {
     ],
     'import/no-unresolved': 0,
   },
-  // globals: {
-  //   jest: true,
-  //   expect: true,
-  //   beforeEach: true,
-  //   afterEach: true,
-  //   describe: true,
-  //   it: true,
-  //   test: true,
-  // },
 };
