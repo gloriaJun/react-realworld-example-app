@@ -24,13 +24,13 @@
     "**/*.js": [
       "eslint --fix",
       "prettier --write",
-      "git add",
-      "jest --bail --findRelatedTests"
+      "git add"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "jest --config jest.config.js"
     }
   },
   "devDependencies": {
