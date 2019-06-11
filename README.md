@@ -12,6 +12,11 @@
 
 Reference to [ISSUE](https://github.com/gloriaJun/react-realworld-example-app/issues)
 
+## Project Structure
+
+based on [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
+![](https://cdn-images-1.medium.com/max/1600/1*m2fb_YCpY3WUJxKNUjLPdA.png)
+
 ## Environment
 
 - React v16.6.x
