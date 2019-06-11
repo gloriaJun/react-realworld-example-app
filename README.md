@@ -5,7 +5,8 @@
 [![dependencies Status](https://david-dm.org/gloriaJun/react-realworld-example-app/status.svg)](https://david-dm.org/gloriaJun/react-realworld-example-app)
 [![devDependencies Status](https://david-dm.org/gloriaJun/react-realworld-example-app/dev-status.svg)](https://david-dm.org/gloriaJun/react-realworld-example-app?type=dev)
 
-React codebase containing [RealWorld](https://github.com/gothinkster/realworld) examples
+- React codebase containing [RealWorld](https://github.com/gothinkster/realworld) examples
+- [Starter Kit](https://github.com/gothinkster/realworld-starter-kit)
 
 ## TODO
 
