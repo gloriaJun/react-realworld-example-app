@@ -6,13 +6,13 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import Home from '@/container/Home/Home';
-import SignIn from '@/container/signIn/SignIn';
-import SignUp from '@/container/signUp/SignUp';
-import Profile from '@/container/profile/Profile';
-import Article from '@/container/article/Article';
-import Editor from '@/container/editor/Editor';
-import Settings from '@/container/settings/Settings';
+import Home from 'container/home/Home';
+import SignIn from 'container/signIn/SignIn';
+import SignUp from 'container/signUp/SignUp';
+import Profile from 'container/profile/Profile';
+import Article from 'container/article/Article';
+import Editor from 'container/editor/Editor';
+import Settings from 'container/settings/Settings';
 
 export default function App() {
   return (
