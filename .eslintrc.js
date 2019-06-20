@@ -16,7 +16,7 @@ module.exports = {
     },
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 0 : 2,
+    'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
     'react/jsx-filename-extension': 0,
     'import/no-extraneous-dependencies': [
       'error',
