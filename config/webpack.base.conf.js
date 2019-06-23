@@ -10,7 +10,7 @@ const resolve = (...args) => path.resolve(__dirname, ...args);
 
 // constant
 const SRC_DIRNAME = 'src';
-const OUTPUT_DIR = resolve('dist');
+const OUTPUT_DIR = resolve('..', 'dist');
 const PUBLIC_PATH = '/';
 const TEMPLATE_DIRNAME = 'public';
 const TEMPLATE_ENTRY_FILENAME = 'index.html';

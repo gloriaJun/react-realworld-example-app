@@ -14,7 +14,7 @@
     "test:watch": "$npm_execpath test --watch",
     "test:coverage": "$npm_execpath test --coverage --colors",
     "predeploy": "$npm_execpath build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint 'src/**/*.{js,jsx}' --fix",
     "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'",
     "storybook": "start-storybook -p 9001 -c .storybook",
