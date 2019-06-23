@@ -1,12 +1,12 @@
+'use strict';
+
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // utility
-const resolve = (...args) => {
-  console.log(args, __dirname);
-  return path.resolve(__dirname, ...args);
-};
+const resolve = (...args) => path.resolve(__dirname, ...args);
 
 // constant
 const SRC_DIRNAME = 'src';
@@ -16,6 +16,7 @@ const TEMPLATE_DIRNAME = 'public';
 const TEMPLATE_ENTRY_FILENAME = 'index.html';
 
 const isDev = process.env.NODE_ENV !== 'production';
+const config = require('dotenv').config(resolve('..', '.env'));
 
 const baseWebpackConfig = {
   target: 'web',
@@ -84,6 +85,9 @@ const baseWebpackConfig = {
     new MiniCssExtractPlugin({
       filename: isDev ? '[name].css' : '[name].[hash].css',
       chunkFilename: isDev ? '[id].css' : '[id].[hash].css',
+    }),
+    new webpack.EnvironmentPlugin({
+      ...config.parsed,
     }),
   ],
   optimization: {
