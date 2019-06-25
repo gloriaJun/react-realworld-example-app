@@ -1,18 +1,18 @@
 module.exports = {
+  parser: 'babel-eslint',
+  extends: ['airbnb', 'plugin:prettier/recommended', 'prettier/react'],
+  plugins: ['react', 'jsx-a11y', 'import'],
   env: {
     browser: true,
     node: true,
     es6: true,
     jest: true,
   },
-  parser: 'babel-eslint',
-  extends: ['airbnb', 'prettier', 'prettier/react'],
-  plugins: ['react', 'jsx-a11y', 'import'],
-  settings: {
-    'import/resolver': {
-      node: {
-        moduleDirectory: ['node_modules', 'src'],
-      },
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
     },
   },
   rules: {
@@ -23,5 +23,12 @@ module.exports = {
       { devDependencies: ['**/*.test.js', '**/*.spec.js', '**/*.stories.js'] },
     ],
     'import/no-unresolved': 0,
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src'],
+      },
+    },
   },
 };
