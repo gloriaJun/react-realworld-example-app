@@ -24,10 +24,10 @@ deploy:
   on:
     branch: master
 
-#notifications:
-#  email: false
-#  slack:
-#    rooms:
-#      - glriaroom:$SLACK_TOKEN#devops
-#    on_success: change # default : always
-#    on_failure: always # default : always
+notifications:
+  email: false
+  slack:
+    rooms:
+      - glriaroom:$SLACK_TOKEN#devops
+    on_success: change # default : always
+    on_failure: always # default : always
