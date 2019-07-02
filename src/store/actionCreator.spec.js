@@ -1,4 +1,4 @@
-import { createActionTypes } from 'store/actionCreator';
+import { createActionTypes, createAsyncActionTypes } from 'store/actionCreator';
 
 describe('[actionCreator] createActionTyper', () => {
   it('create the type without namespace', () => {
@@ -24,6 +24,26 @@ describe('[actionCreator] createActionTyper', () => {
     expect(result).toMatchObject({
       ADD: 'USER_ADD',
       DELETE: 'USER_DELETE',
+    });
+  });
+
+  it('create the type with async', () => {
+    // given
+    const types = ['ADD', 'DELETE'];
+    // when
+    const result = createAsyncActionTypes(types);
+    // then
+    expect(result).toMatchObject({
+      ADD: {
+        INDEX: 'ADD',
+        SUCCESS: 'ADD_SUCCESS',
+        FAIL: 'ADD_FAIL',
+      },
+      DELETE: {
+        INDEX: 'DELETE',
+        SUCCESS: 'DELETE_SUCCESS',
+        FAIL: 'DELETE_FAIL',
+      },
     });
   });
 });
