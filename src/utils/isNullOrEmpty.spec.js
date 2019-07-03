@@ -1,4 +1,4 @@
-import { isNullOrEmpty } from 'utils/objectUtils';
+import isNullOrEmpty from 'utils/isNullOrEmpty';
 
 describe('[objectUtility] isNullOrEmpty', () => {
   it('string - should be return false: abc', () => {
