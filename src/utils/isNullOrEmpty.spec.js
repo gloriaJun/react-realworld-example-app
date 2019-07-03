@@ -1,6 +1,6 @@
 import isNullOrEmpty from 'utils/isNullOrEmpty';
 
-describe('[objectUtility] isNullOrEmpty', () => {
+describe('isNullOrEmpty', () => {
   it('string - should be return false: abc', () => {
     expect(isNullOrEmpty('abc')).toBe(false);
   });
