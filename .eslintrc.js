@@ -1,6 +1,11 @@
 module.exports = {
   parser: 'babel-eslint',
-  extends: ['airbnb', 'plugin:prettier/recommended', 'prettier/react'],
+  extends: [
+    'airbnb',
+    'plugin:prettier/recommended',
+    'plugin:import/errors',
+    'prettier/react',
+  ],
   plugins: ['react', 'jsx-a11y', 'import'],
   env: {
     browser: true,
@@ -16,13 +21,41 @@ module.exports = {
     },
   },
   rules: {
+    // ESLint
     'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
+
+    // React
     'react/jsx-filename-extension': 0,
+    'react/jsx-pascal-case': [
+      'error',
+      {
+        allowAllCaps: true,
+        ignore: [],
+      },
+    ],
+    'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always' }],
+    'react/jsx-indent-props': ['error', 2],
+    'react/sort-comp': [
+      2,
+      {
+        order: [
+          'static-methods',
+          'lifecycle',
+          '/^on.+$/',
+          'everything-else',
+          'rendering',
+        ],
+        groups: {
+          rendering: ['/^render.+$/', 'render'],
+        },
+      },
+    ],
+
+    // Import
     'import/no-extraneous-dependencies': [
       'error',
       { devDependencies: ['**/*.test.js', '**/*.spec.js', '**/*.stories.js'] },
     ],
-    'import/no-unresolved': 0,
   },
   settings: {
     'import/resolver': {
