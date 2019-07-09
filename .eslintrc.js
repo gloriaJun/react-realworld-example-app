@@ -99,8 +99,9 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        paths: [path.resolve(__dirname, 'src')],
+        moduleDirectory: ['node_modules', 'src'],
       },
+      webpack: './config/webpack.base.conf.js',
     },
   },
 };
