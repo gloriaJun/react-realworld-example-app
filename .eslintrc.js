@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     // ESLint
     'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
+    camelcase: 'error',
 
     // React
     'react/jsx-filename-extension': 0,
@@ -35,13 +36,14 @@ module.exports = {
     ],
     'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always' }],
     'react/jsx-indent-props': ['error', 2],
+    'react/jsx-handler-names': 'error',
     'react/sort-comp': [
       2,
       {
         order: [
           'static-methods',
           'lifecycle',
-          '/^on.+$/',
+          '/^(on|handle).+$/',
           'everything-else',
           'rendering',
         ],
