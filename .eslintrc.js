@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   parser: 'babel-eslint',
   extends: [
@@ -26,29 +28,64 @@ module.exports = {
     camelcase: 'error',
 
     // React
-    'react/jsx-filename-extension': 0,
-    'react/jsx-pascal-case': [
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx'] }],
+    'react/forbid-prop-types': 1,
+    // 'react/jsx-pascal-case': [
+    //   2,
+    //   {
+    //     allowAllCaps: true,
+    //     ignore: [],
+    //   },
+    // ],
+    // 'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always' }],
+    // 'react/jsx-indent-props': ['error', 2],
+    'react/jsx-handler-names': [
       'error',
       {
-        allowAllCaps: true,
-        ignore: [],
+        eventHandlerPrefix: 'handle',
+        eventHandlerPropPrefix: 'on',
       },
     ],
-    'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always' }],
-    'react/jsx-indent-props': ['error', 2],
-    'react/jsx-handler-names': 'error',
     'react/sort-comp': [
-      2,
+      'error',
       {
         order: [
           'static-methods',
+          'instance-variables',
           'lifecycle',
           '/^(on|handle).+$/',
+          'getters',
+          'setters',
+          '/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/',
+          'instance-methods',
           'everything-else',
           'rendering',
         ],
         groups: {
+          lifecycle: [
+            'displayName',
+            'propTypes',
+            'contextTypes',
+            'childContextTypes',
+            'mixins',
+            'statics',
+            'defaultProps',
+            'constructor',
+            'getDefaultProps',
+            'getInitialState',
+            'state',
+            'getChildContext',
+            'componentWillMount',
+            'componentDidMount',
+            'componentWillReceiveProps',
+            'shouldComponentUpdate',
+            'componentWillUpdate',
+            'componentDidUpdate',
+            'componentWillUnmount',
+          ],
           rendering: ['/^render.+$/', 'render'],
+          // getter: ['/^(get|fetch|search).+$/'],
+          // setter: ['/^set.+$/'],
         },
       },
     ],
@@ -62,7 +99,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        moduleDirectory: ['node_modules', 'src'],
+        paths: [path.resolve(__dirname, 'src')],
       },
     },
   },
