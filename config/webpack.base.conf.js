@@ -81,6 +81,7 @@ const baseWebpackConfig = {
       template: `${TEMPLATE_DIRNAME}/${TEMPLATE_ENTRY_FILENAME}`,
       favicon: `${TEMPLATE_DIRNAME}/favicon.ico`,
       filename: TEMPLATE_ENTRY_FILENAME,
+      title: process.env.TITLE,
     }),
     new MiniCssExtractPlugin({
       filename: isDev ? '[name].css' : '[name].[hash].css',
